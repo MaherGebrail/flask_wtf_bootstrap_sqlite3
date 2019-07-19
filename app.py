@@ -29,6 +29,10 @@ class SignupForm(FlaskForm):
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> refs/remotes/origin/master
 
 
 @app.route("/",methods=["GET","POST"])
