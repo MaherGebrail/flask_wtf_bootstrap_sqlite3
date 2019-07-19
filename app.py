@@ -49,14 +49,18 @@ def index():
                 c = conn.cursor()
                 x=c.execute(""" SELECT * FROM users WHERE name = :name AND pass= :pass""",
                           {"name":form.username.data,"pass":form.password.data}).fetchone()
+                if x :
+                    return f"{x} are logged in"
 
-                return f"{x} are logged in"
-
+            error_="try again , your account , has no exist , or signup"
         except Exception as e:
             print(e)
             return redirect(url_for('sign_up_p'))
 
-    return render_template('home.html',form=form)
+    try:
+        return render_template('home.html', form=form, er=error_)
+    except Exception:
+        return render_template('home.html',form=form)
 
 
 @app.route("/signup",methods=["GET","POST"])

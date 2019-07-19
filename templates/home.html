@@ -8,8 +8,6 @@
 </div>
 {% endblock %}
 
-
-
 {% block content %}
 
 <h2 style="align-content: center;">{{header_P}}</h2>
@@ -19,10 +17,14 @@
         {{ form.hidden_tag() }}
         {{ wtf.form_errors(form, hiddens="only") }}
       
-        {{ wtf.form_field(form.username) }}
-        {{ wtf.form_field(form.password) }} 
+        {{ wtf.form_field(form.username,style="color:red; background-color:whitesmoke; ",placeholder="Enter your name") }}
+        {{ wtf.form_field(form.password,placeholder="Enter your password",style="background-color:whitesmoke;") }} 
 
         <input class="btn btn-primary" type="submit" value="Login"> 
     </form>
+    {% if er %}
+        <div>{{er}}</div>
+
+    {% endif %}
 </div>
 {% endblock %}
