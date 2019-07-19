@@ -29,10 +29,6 @@ class SignupForm(FlaskForm):
 
 
 
-conn= sqlite3.connect("test.db")#it create file if not exist
-c=conn.cursor()
-
-
 
 
 
