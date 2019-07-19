@@ -1,0 +1,23 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Sign up{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{{url_for('index')}}">Login</a>
+</div>
+{% endblock %}
+
+
+{% block content %}
+
+<h2 style="align-content: center;">{{header_P}}</h2>
+
+<div style="width:50; margin-left:25%; margin-right: 25%; margin-top: 3%;  ">
+<form action="{{url_for('sign_up_p')}}" method="POST" >
+
+        {{ wtf.quick_form(form,button_map={'submit_button': 'primary'}) }}
+
+    </form>
+</div>
+{% endblock %}
